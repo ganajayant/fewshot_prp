@@ -10,7 +10,7 @@ pip install dist/fewshot_prp-0.1-py3-none-any.whl
 
 Currently, for research and development, clone this repo and install it as editable
 ```
-git clone https://github.com/nilanjansb/fewshot_prp.git
+git clone fewshot_prp.git
 cd fewshot_prp
 pip install -e .
 ```
