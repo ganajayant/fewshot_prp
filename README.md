@@ -48,5 +48,5 @@ The following parameters are accepted by fewshot_prp
 ## Run
 An example zero-shot and one-shot re-ranking (LLM = Zephyr) of top-100 documents from TREC DL'2019 and TREC DL'2020 in SEM and LEX mode and setting for direct evaluation (we consider a seed value of 42).
 ```ruby
-python fewshot-prp reranker=zephyr top_k=100 datasets=dl19,dl20 kshots=0,1 seed=42 modes=SEM,LEX eval=False
+python fewshot-prp reranker=zephyr top_k=100 datasets=dl19,dl20 kshots=0,1 seed=42 modes=SEM,LEX eval=True
 ```
