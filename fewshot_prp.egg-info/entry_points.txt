@@ -1,0 +1,3 @@
+[concole_scripts]
+fewshot_prp = fewshot_prp:main
+
