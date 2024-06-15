@@ -127,7 +127,7 @@ class RelevancyScorerLLM():
         file_name = f'scores/reranking_scores_{ds}_t{top_k}_{reranker}_{self.mode}{self.max_fewshot}_R{random_seed}_{self.kshot}-shot'
 
         scored_res.to_csv(f'{file_name}.csv')
-        RelevancyScorerLLM.store_res(scored_res, file_name)
+        #RelevancyScorerLLM.store_res(scored_res, file_name)
 
         if evaluate:
             # per-query execution time
