@@ -64,18 +64,32 @@ The output files must be present in the following location:
      -- <re-ranker outputs>
 ```
 
+The evaluation model parameters:
+```
+ModelEvaluation.evaluate(<key>, <metrics>, <FS>, W1, W2, <FB>, <RR>)
+```
+- key : Either 'baseline' or 'bm25'
+- Fusion Sum (FS): Linear combined with weights W1 and W2 (W2 = 1 - W1). Use either 'True' or 'False' along with weights, e.g. ( W1=0.7 and W2=1-W1 ).
+- Fall Back (FB): Fall back to BM25 ranks in case of conflicts/ties. Use either 'True' or 'False'.
+- Reciprocal Rank (RR): Uses rank reciprocals to re-rank the documents. Use either 'True' or 'False'
+
 ## Evaluate all the baselines phase-one retriever (BM25)
+
+Use key as 'baselines'
+
 ```ruby
 from fewshot_prp.evaluation.evaluation import ModelEvaluation
 from pyterrier.measures import *
 
 metrics = [AP(rel=2)@100, NDCG(cutoff=10)]
 
-output = ModelEvaluation.evaluate('baselines', metrics, False, 1.0, 1.0, False, False)
+output = ModelEvaluation.evaluate('baselines', metrics, False, 0.7, 0.3, False, False)
 display(output)
 ```
 
 ## Evaluate the re-rankers (Zephyr,FlanXL)
+
+Use key as 'bm25'. For re-ranking conflicts and ties, we used Fusion Sum with W1=0.7 in all the experiments.
 
 ```ruby
 from fewshot_prp.evaluation.evaluation import ModelEvaluation
@@ -85,8 +99,7 @@ metrics = [AP(rel=2)@100, NDCG(cutoff=10)]
 w = 0.70
 
 output = ModelEvaluation.evaluate('bm25', metrics, True, w, 1-w, False, False)
+display(output)
 ```
 
-> **_NOTE:_** All the metrics supported by my terrier can be used. 
-#                                                   FS     W1   W2    FB    RR
-metrics = [AP(rel=2)@100, NDCG(cutoff=1), NDCG(cutoff=5), NDCG(cutoff=10), NDCG(cutoff=100), P@10]
+> **_NOTE:_** All the metrics supported by pyterrier can be used. 
