@@ -50,3 +50,43 @@ An example zero-shot and one-shot re-ranking (LLM = Zephyr) of top-100 documents
 ```ruby
 python fewshot-prp reranker=zephyr top_k=100 datasets=dl19,dl20 kshots=0,1 seed=42 modes=SEM,LEX eval=True
 ```
+
+# Evaluation
+
+The output files must be present in the following location:
+
+```
+-- fewshot_prp
+  -- datasets
+     -- phase_one_retreival
+        -- <baselines>
+  -- scores
+     -- <re-ranker outputs>
+```
+
+## Evaluate all the baselines phase-one retriever (BM25)
+```ruby
+from fewshot_prp.evaluation.evaluation import ModelEvaluation
+from pyterrier.measures import *
+
+metrics = [AP(rel=2)@100, NDCG(cutoff=10)]
+
+output = ModelEvaluation.evaluate('baselines', metrics, False, 1.0, 1.0, False, False)
+display(output)
+```
+
+## Evaluate the re-rankers (Zephyr,FlanXL)
+
+```ruby
+from fewshot_prp.evaluation.evaluation import ModelEvaluation
+from pyterrier.measures import *
+
+metrics = [AP(rel=2)@100, NDCG(cutoff=10)]
+w = 0.70
+
+output = ModelEvaluation.evaluate('bm25', metrics, True, w, 1-w, False, False)
+```
+
+> **_NOTE:_** All the metrics supported by my terrier can be used. 
+#                                                   FS     W1   W2    FB    RR
+metrics = [AP(rel=2)@100, NDCG(cutoff=1), NDCG(cutoff=5), NDCG(cutoff=10), NDCG(cutoff=100), P@10]
