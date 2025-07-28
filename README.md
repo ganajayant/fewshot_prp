@@ -1,5 +1,6 @@
 # fewshot_prp
-A few-shot implementation of Pairwise Ranking Prompting (PRP) method with a All-Pair re-ranking mechanism.
+A few-shot implementation of Pairwise Ranking Prompting (PRP) method with an All-Pair re-ranking mechanism.
+> Our Fewshot PRP paper has been accepted at EMNLP-2024 Findings!
 
 # Installation
 
@@ -102,4 +103,22 @@ output = ModelEvaluation.evaluate('bm25', metrics, True, w, 1-w, False, False)
 display(output)
 ```
 
-> **_NOTE:_** All the metrics supported by pyterrier can be used. 
+> **_NOTE:_** All the metrics supported by pyterrier can be used.
+
+---
+## 🙏 Citation
+
+```bibtex
+@inproceedings{sinhababu-2024-fsprp,
+    title = "Few-shot Prompting for Pairwise Ranking: An Effective Non-Parametric Retrieval Model",
+    author = {Sinhababu, Nilanjan and Parry, Andrew and Ganguly, Debasis and Samanta, Debasis and Mitra, Pabitra},
+    booktitle = "Findings of the Association for Computational Linguistics: EMNLP 2024",
+    month = nov,
+    year = "2024",
+    address = "Miami, Florida, USA",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.findings-emnlp.720/",
+    doi = "10.18653/v1/2024.findings-emnlp.720",
+    pages = "12363--12377"
+}
+```
