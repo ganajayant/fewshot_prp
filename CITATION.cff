@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+authors:
+- family-names: "Sinhababu"
+  given-names: "Nilanjan"
+- family-names: "Parry"
+  given-names: "Andrew"
+- family-names: "Ganguly"
+  given-names: "Debasis"
+- family-names: "Samanta"
+  given-names: "Debasis"
+- family-names: "Mitra"
+  given-names: "Pabitra"
+title: "Few-shot Prompting for Pairwise Ranking: An Effective Non-Parametric Retrieval Model"
+version: 1.0
+doi: 10.18653/v1/2024.findings-emnlp.720
+date-released: 2024-11-01
+url: "https://github.com/nilanjansb/fewshot_prp"
+preferred-citation:
+  type: conference-paper
+  authors:
+  - family-names: "Sinhababu"
+    given-names: "Nilanjan"
+  - family-names: "Parry"
+    given-names: "Andrew"
+  - family-names: "Ganguly"
+    given-names: "Debasis"
+  - family-names: "Samanta"
+    given-names: "Debasis"
+  - family-names: "Mitra"
+    given-names: "Pabitra"
+  doi: "10.18653/v1/2024.findings-emnlp.720"
+  journal: "Findings of the Association for Computational Linguistics: EMNLP 2024"
+  month: 11
+  start: 12363 # First page number
+  end: 12377 # Last page number
+  title: "Few-shot Prompting for Pairwise Ranking: An Effective Non-Parametric Retrieval Model"
+  year: 2024
