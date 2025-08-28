@@ -89,7 +89,7 @@ class RelevancyScorerLLM:
         # true static random example
         self.example_static = []
 
-        self.device = "cuda:0" if torch.cuda.is_available() else "CPU"
+        self.device = "cuda:0" if torch.cuda.is_available() else "cpu"
         self.model = model
         self.tokenizer = tokenizer
 
