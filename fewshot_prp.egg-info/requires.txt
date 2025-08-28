@@ -1,7 +1,0 @@
-pandas>=2.2.2
-python-terrier>=0.10.0
-requests>=2.31.0
-torch>=2.1.2
-tqdm>=4.56.0
-transformers>=4.40.1
-urllib3>=2.2.1

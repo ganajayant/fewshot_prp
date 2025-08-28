@@ -1,21 +1,17 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
 setup(
-    name='fewshot_prp',
-    version='0.1',
+    name="fewshot_prp",
+    version="0.1",
     packages=find_packages(),
     install_requires=[
-        'tqdm>=4.56.0',
-        'torch>=2.1.2',
-        'python-terrier>=0.10.0',
-        'requests>=2.31.0',
-        'urllib3>=2.2.1',
-        'transformers>=4.40.1',
-        'pandas>=2.2.2'
+        "tqdm>=4.56.0",
+        "torch>=2.1.2",
+        "python-terrier>=0.10.0",
+        "requests>=2.31.0",
+        "urllib3>=2.2.1",
+        "transformers>=4.40.1",
+        "pandas>=2.2.2",
     ],
-    entry_points={
-    "concole_scripts": [
-        "fewshot_prp = fewshot_prp:main"
-    ]
-    }
+    entry_points={"console_scripts": ["fewshot_prp = fewshot_prp:main"]},
 )
