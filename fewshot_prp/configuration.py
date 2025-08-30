@@ -16,7 +16,7 @@ data_path = f"{cwd}/datasets/"
 res_path = f"{cwd}/scores/"
 
 # passage index location
-index_path = os.path.join(os.path.expanduser("~"), "Datasets/index/")
+index_path = os.path.join(os.path.expanduser("~"), "Datasets/")
 
 # path to models cache
 cache_path = os.path.join(os.path.expanduser("~"), "cache")
@@ -33,27 +33,27 @@ datasets = {
     "msmarco_passage": {
         "name": "msmarco_passage",
         "topics": "train",
-        "index": f"{index_path}trecdl_index/",
+        "index": f"{index_path}msmarco_passage_index/",
     },
     "dl19": {
         "name": "irds:msmarco-passage/trec-dl-2019/judged",
         "topics": "text",
-        "index": f"{index_path}trecdl_index/",
+        "index": f"{index_path}irds_msmarco-passage_trec-dl-2019_judged_index/",
     },
     "dl20": {
         "name": "irds:msmarco-passage/trec-dl-2020/judged",
         "topics": "text",
-        "index": f"{index_path}trecdl_index/",
+        "index": f"{index_path}irds_msmarco-passage_trec-dl-2020_judged_index/",
     },
     "covid": {
         "name": "irds:cord19/trec-covid",
         "topics": "title",
-        "index": f"{index_path}beir_covid_index/",
+        "index": f"{index_path}/irds_cord19_trec-covid_index/",
     },
     "scifact": {
         "name": "irds:beir/scifact/test",
         "topics": "text",
-        "index": f"{index_path}beir_scifact_index/",
+        "index": f"{index_path}irds_beir_scifact_test_index/",
     },
 }
 

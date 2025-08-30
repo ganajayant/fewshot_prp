@@ -6,9 +6,9 @@ pt.init()
 
 datasets = [
     # {"name": "irds:beir/scifact/test", "fields": ["text", "title"]},
-    # {"name": "irds:cord19/trec-covid", "fields": ["title", "doi", "date", "abstract"]},
-    {"name": "irds:msmarco-passage/trec-dl-2020/judged", "fields": ["text"]},
-    {"name": "irds:msmarco-passage/trec-dl-2019/judged", "fields": ["text"]},
+    {"name": "irds:cord19/trec-covid", "fields": ["title", "doi", "date", "abstract"]},
+    # {"name": "irds:msmarco-passage/trec-dl-2020/judged", "fields": ["text"]},
+    # {"name": "irds:msmarco-passage/trec-dl-2019/judged", "fields": ["text"]},
     # {"name": "msmarco_passage", "fields": ["text"]},
 ]
 
